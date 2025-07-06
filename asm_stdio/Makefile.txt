@@ -1,0 +1,16 @@
+NASMENV=-i include/
+export NASMENV
+
+.PHONY: clean
+
+all: test
+
+test: test32.o
+	ld $^ -o $@
+
+test32.o: test32.asm
+	nasm -f elf $^
+
+clean:
+	rm -f *.o test
+
