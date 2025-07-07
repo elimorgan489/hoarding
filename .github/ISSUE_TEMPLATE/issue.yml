@@ -1,0 +1,76 @@
+name: General Issue
+description: Report a bug, suggest a feature, or ask a question
+title: "[Issue]: "
+labels: ["needs triage"]
+assignees: []
+
+body:
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: What type of issue is this?
+      options:
+        - Bug Report 🐛
+        - Feature Request ✨
+        - Question ❓
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: summary
+    attributes:
+      label: Short Summary
+      description: Briefly describe the issue or request
+      placeholder: "e.g. App crashes on startup"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Full Description
+      description: Please provide a detailed explanation of the problem or suggestion
+      placeholder: |
+        Describe what you expected to happen, what actually happened, and why this matters.
+        If it's a request, explain the value it would add.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce (for bugs)
+      description: If this is a bug, list the steps needed to reproduce the issue.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+    validations:
+      required: false
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: What platform, OS, or version are you using?
+      placeholder: "e.g. macOS 14.4, Firefox 140.0"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or Logs
+      description: Drag and drop any relevant screenshots or logs here.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I have read and agree to this project's [Code of Conduct](../blob/main/CODE_OF_CONDUCT.md)
+          required: true
